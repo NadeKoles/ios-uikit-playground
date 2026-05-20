@@ -54,54 +54,54 @@ class ViewController: UIViewController {
             myView.widthAnchor.constraint(equalToConstant: 200),
             myView.heightAnchor.constraint(equalToConstant: 200),
             myView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            myView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30)
+            myView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
         ])
-        
+
         NSLayoutConstraint.activate([
             colorSegmentedControl.widthAnchor.constraint(equalToConstant: 300),
             colorSegmentedControl.heightAnchor.constraint(equalToConstant: 30),
             colorSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            colorSegmentedControl.topAnchor.constraint(equalTo: myView.bottomAnchor, constant: 40)
+            colorSegmentedControl.topAnchor.constraint(equalTo: myView.bottomAnchor, constant: 24)
         ])
-        
-        NSLayoutConstraint.activate([
-            sliderCornerRadius.widthAnchor.constraint(equalToConstant: 300),
-            sliderCornerRadius.heightAnchor.constraint(equalToConstant: 20),
-            sliderCornerRadius.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sliderCornerRadius.topAnchor.constraint(equalTo: colorSegmentedControl.bottomAnchor, constant: 50)
-        ])
-        
+
         NSLayoutConstraint.activate([
             labelCornerRadius.widthAnchor.constraint(equalToConstant: 300),
             labelCornerRadius.heightAnchor.constraint(equalToConstant: 20),
             labelCornerRadius.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelCornerRadius.centerYAnchor.constraint(equalTo: sliderCornerRadius.centerYAnchor, constant: -30)
+            labelCornerRadius.topAnchor.constraint(equalTo: colorSegmentedControl.bottomAnchor, constant: 24)
         ])
-        
+
         NSLayoutConstraint.activate([
-            sliderBorderWidth.widthAnchor.constraint(equalToConstant: 300),
-            sliderBorderWidth.heightAnchor.constraint(equalToConstant: 20),
-            sliderBorderWidth.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sliderBorderWidth.topAnchor.constraint(equalTo: sliderCornerRadius.bottomAnchor, constant: 50)
+            sliderCornerRadius.widthAnchor.constraint(equalToConstant: 300),
+            sliderCornerRadius.heightAnchor.constraint(equalToConstant: 20),
+            sliderCornerRadius.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sliderCornerRadius.topAnchor.constraint(equalTo: labelCornerRadius.bottomAnchor, constant: 8)
         ])
-        
+
         NSLayoutConstraint.activate([
             labelBorderWidth.widthAnchor.constraint(equalToConstant: 300),
             labelBorderWidth.heightAnchor.constraint(equalToConstant: 20),
             labelBorderWidth.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelBorderWidth.centerYAnchor.constraint(equalTo: sliderBorderWidth.centerYAnchor, constant: -30)
+            labelBorderWidth.topAnchor.constraint(equalTo: sliderCornerRadius.bottomAnchor, constant: 24)
         ])
-        
+
         NSLayoutConstraint.activate([
-            switchModeControl.trailingAnchor.constraint(equalTo: sliderBorderWidth.trailingAnchor),
-            switchModeControl.centerYAnchor.constraint(equalTo: sliderBorderWidth.centerYAnchor, constant: 60)
+            sliderBorderWidth.widthAnchor.constraint(equalToConstant: 300),
+            sliderBorderWidth.heightAnchor.constraint(equalToConstant: 20),
+            sliderBorderWidth.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sliderBorderWidth.topAnchor.constraint(equalTo: labelBorderWidth.bottomAnchor, constant: 8)
         ])
-        
+
         NSLayoutConstraint.activate([
             labelBugMode.widthAnchor.constraint(equalToConstant: 150),
             labelBugMode.heightAnchor.constraint(equalToConstant: 20),
             labelBugMode.leadingAnchor.constraint(equalTo: sliderBorderWidth.leadingAnchor),
-            labelBugMode.centerYAnchor.constraint(equalTo: switchModeControl.centerYAnchor)
+            labelBugMode.topAnchor.constraint(equalTo: sliderBorderWidth.bottomAnchor, constant: 24)
+        ])
+
+        NSLayoutConstraint.activate([
+            switchModeControl.trailingAnchor.constraint(equalTo: sliderBorderWidth.trailingAnchor),
+            switchModeControl.centerYAnchor.constraint(equalTo: labelBugMode.centerYAnchor)
         ])
         
         sliderCornerRadius.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
