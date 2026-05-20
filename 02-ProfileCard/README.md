@@ -6,7 +6,7 @@ Topic #2 of the UIKit practice series. A programmatic profile screen with two sw
 
 | Compact | Full | Edit |
 |:---:|:---:|:---:|
-| ![Compact layout](screenshots/compact.png) | ![Full layout](screenshots/full.png) | ![Edit alert](screenshots/edit.png) |
+| <img src="screenshots/compact.png" width="220"> | <img src="screenshots/full.png" width="220"> | <img src="screenshots/edit.png" width="220"> |
 
 ## What it does
 

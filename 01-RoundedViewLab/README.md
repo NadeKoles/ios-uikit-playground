@@ -6,7 +6,7 @@ Topic #1 of the UIKit practice series. An interactive playground for exploring `
 
 | Normal | Bug mode ON | Bug mode OFF |
 |:---:|:---:|:---:|
-| ![Normal](screenshots/normal.png) | ![Bug mode on](screenshots/bug_on.png) | ![Bug mode off](screenshots/bug_off.png) |
+| <img src="screenshots/normal.png" width="220"> | <img src="screenshots/bug_on.png" width="220"> | <img src="screenshots/bug_off.png" width="220"> |
 
 ## What it does
 
