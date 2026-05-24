@@ -22,11 +22,11 @@ A profile card showing a generated avatar, name, and bio. A segmented control sw
 
 **Memory safety in closures.** The edit alert captures both `self` and `alert` as `weak`: `[weak self, weak alert]`. Without `weak alert`, the closure would hold a strong reference to the alert, which holds the closure, creating a retain cycle.
 
-**`UserDefaults` persistence.** The edited name is saved on Save and loaded in `viewDidLoad`, so it survives app restarts. The initials label updates in sync.
+**Name persists across launches.** The edited name is saved to `UserDefaults` on Save and loaded in `viewDidLoad`, so it survives app restarts. The initials label updates in sync.
 
 **Code structure.** `viewDidLoad` is just four calls: `setupViews()`, `setupConstraints()`, `setupActions()`, and an initial layout pass. All implementation lives in private methods under `// MARK:` sections.
 
-**Portrait-only, safeAreaLayoutGuide throughout.** Rotation support was intentionally dropped; the card layout doesn't benefit from landscape. `safeAreaLayoutGuide` is still used for all leading/trailing constraints as a good habit for Dynamic Island and future device changes.
+**Portrait-only, safe area throughout.** Rotation support was intentionally dropped; the card layout doesn't benefit from landscape. `safeAreaLayoutGuide` is still used for all leading/trailing constraints as a good habit for Dynamic Island and future device changes.
 
 ## Files
 
