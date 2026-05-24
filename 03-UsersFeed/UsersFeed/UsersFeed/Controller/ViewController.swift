@@ -31,8 +31,18 @@ class ViewController: UIViewController {
 
     private func updateLikes() {
         let likesCount = users.filter { $0.like }.count
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "♥ \(likesCount)")
-        navigationItem.rightBarButtonItem?.tintColor = .systemRed
+
+        var config = UIButton.Configuration.plain()
+        config.title = "♥ \(likesCount)"
+        config.baseForegroundColor = .likeRed
+        config.background.backgroundColor = .likeBackground
+        config.background.cornerRadius = 8
+        config.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8)
+
+        let button = UIButton(configuration: config)
+        button.isUserInteractionEnabled = false
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
 
     private func reloadVisible() {
@@ -86,8 +96,8 @@ class ViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
             searchBar.heightAnchor.constraint(equalToConstant: 56)
         ])
 

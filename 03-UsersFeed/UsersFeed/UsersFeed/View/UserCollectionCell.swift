@@ -52,13 +52,15 @@ class UserCollectionCell: UICollectionViewCell, UserCardCell {
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             
-            buttonLike.heightAnchor.constraint(equalToConstant: 36)
+            buttonLike.heightAnchor.constraint(equalToConstant: 36),
+            buttonLike.widthAnchor.constraint(equalToConstant: 36)
         ])
     }
 
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let userId else { return }
         sender.isSelected.toggle()
+        updateLikeButtonAppearance(isLiked: sender.isSelected)
         delegate?.setLike(for: userId, sender.isSelected)
     }
 

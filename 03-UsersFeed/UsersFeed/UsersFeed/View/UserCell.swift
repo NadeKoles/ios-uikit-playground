@@ -58,6 +58,7 @@ class UserCell: UITableViewCell, UserCardCell {
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let userId else { return }
         sender.isSelected.toggle()
+        updateLikeButtonAppearance(isLiked: sender.isSelected)
         delegate?.setLike(for: userId, sender.isSelected)
     }
 
